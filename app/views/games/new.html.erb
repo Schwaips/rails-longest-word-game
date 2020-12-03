@@ -1,0 +1,26 @@
+<h1>Find the Longest word as fast as possible</h1>
+
+
+
+<h2>See the letters below? Find out the longest word.
+Faster you are, higher your score will be</h2>
+
+<div class="letters-box">
+
+    <%# <ul class="list-inline" id="letter-ul"> %>
+        <% @letters.each do |letter| %>
+        <span class="letter-li list-inline-item"><%= letter %></span>
+        <% end %>
+    <%# </ul> %>
+
+  </div>
+
+  <div id="form-input">
+    <form action="/score" method="POST">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :letters, @letters %>
+          <label for="word">Find the longest word</label>
+          <input type="text" name="word" id="word">
+          <input type="submit" value="Play!">
+    </form>
+  </div>

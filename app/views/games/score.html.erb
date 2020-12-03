@@ -1,0 +1,17 @@
+<h1>Results</h1>
+<h2>Take a look at your results</h2>
+
+<%= @letters  %>
+<%= @check_word %>
+
+<% if @word["found"] == false
+%>
+    <h2> Sorry the word "<%= @word["word"] %>" is not a exising </h2>
+  <% elsif @check_word == false %>
+    <h2>Sorry, the word "<%= @word["word"]  %>" don't match the letters proposed</h2>
+  <% else %>
+    <h2>Congrats ! "<%= @word["word"] %>" does exist !</h2>
+<% end %>
+
+
+<%= link_to  "Play again", "/new" %>
